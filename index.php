@@ -46,6 +46,10 @@ if (!$url) {
   <input name="filename" placeholder="Optional custom filename" />
   <button type="submit">Check & Continue</button>
 </form>
+<footer style="margin-top:3em; font-size:0.8em; color:#666; text-align:center;">
+  <hr>
+  <p>🔗 <a href="https://github.com/BaseMax/RemoteGrabberPHP" target="_blank" rel="noopener noreferrer">RemoteGrabberPHP on GitHub</a></p>
+</footer>
 </body></html>
 HTML;
     exit;
@@ -95,6 +99,10 @@ if (!$confirm) {
   <input type="hidden" name="confirm" value="1" />
   <button type="submit">Start Download</button>
 </form>
+<footer style="margin-top:3em; font-size:0.8em; color:#666; text-align:center;">
+  <hr>
+  <p>🔗 <a href="https://github.com/BaseMax/RemoteGrabberPHP" target="_blank" rel="noopener noreferrer">RemoteGrabberPHP on GitHub</a></p>
+</footer>
 </body></html>
 HTML;
     exit;
