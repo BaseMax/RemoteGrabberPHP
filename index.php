@@ -60,8 +60,17 @@ if (!$headers) {
 }
 
 $type = $headers['Content-Type'] ?? 'unknown';
-$lengthBytes = is_array($headers['Content-Length'] ?? null) ? $headers['Content-Length'][0] : ($headers['Content-Length'] ?? null);
+if (is_array($type)) {
+    $type = end($type);
+}
+
+$lengthBytes = $headers['Content-Length'] ?? null;
+if (is_array($lengthBytes)) {
+    $lengthBytes = end($lengthBytes);
+}
+
 $sizeReadable = $lengthBytes ? round($lengthBytes / 1024 / 1024, 2) . ' MB' : 'unknown';
+
 $acceptRanges = (isset($headers['Accept-Ranges']) && stripos($headers['Accept-Ranges'], 'bytes') !== false);
 $finalFilename = sanitize_filename($customName ?: basename(parse_url($url, PHP_URL_PATH)) ?: 'downloaded_file');
 
